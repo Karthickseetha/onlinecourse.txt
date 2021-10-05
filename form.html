@@ -1,0 +1,101 @@
+<html>
+<head><title>Registration Form</title>
+    <link rel="stylesheet" href="./sty1.css">
+<script type="text/javascript">
+function validation()
+{
+if(document.f1.name.value=="")
+{
+window.alert("Plz Enter Your Name");
+return false;
+}
+else if(document.f1.Mobilenumber.value=="")
+{
+window.alert("Plz Enter Your mobilenumber");
+return false;
+}
+else if(document.f1.email.value=="")
+{
+window.alert("Plz Enter Your E-mail:");
+return false;
+}
+else if(document.f1.email.value.indexOf('@gmail.com')==-1)
+{
+window.alert("Plz Enter Your Valid E-mail:");
+return false;
+}
+
+else if(document.f1.Qualification.selectedIndex==0)
+{
+window.alert("Plz Select Your Qualification");
+return false;
+}
+else if((document.f1.rdo[0].checked==false)&&(document.f1.rdo[1].checked==false)&&(document.f1.rdo[2].checked==false))
+{
+window.alert("Plz Enter Your Gender");
+return false;
+}
+else if(document.f1.Coursename.selectedIndex==0)
+{
+window.alert("Plz Select Your Course name");
+return false;
+}
+else if(document.f1.Coursefees.value=="")
+{
+window.alert("Plz Enter Your Coursefees:");
+return false;
+}
+
+else
+return true;
+}
+</script>
+</head>
+
+<body>
+    
+<h3 style="text-align:center">Online Course Reservation</h3>
+<form name="f1" action="Register.html" onsubmit="return validation()">
+<fieldset>
+<legend>Registeration Form</legend> <br/>
+
+<table border="1">
+<tr><td>Name:</td><td><input type="text" name="name" size="31"></td></tr>
+<tr><td>Mobile number:</td><td><input type="text" name="Mobilenumber" size="10"></td></tr>
+<tr><td>E-mail:</td><td><input type="text" name="email" size="31"></td></tr>
+
+<tr>
+<td>Qualification:</td>
+<td><select name ="Qualification">
+<option>---Select Your Qualification ---</option>
+<option>UG</option>
+<option>PG</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>Coursename:</td>
+<td><select name ="Coursename">
+<option>---Select Your Coursename---</option>
+<option>NET</option>
+<option>JEE</option>
+<option>NEET</option>
+<option>GATE</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>Gender:</td>
+<td>
+<input type="radio" name="rdo">Male
+<input type="radio" name="rdo">Female <input type="radio" name="rdo">Transgender
+</td>
+</tr> 
+<tr><td>Coursefees:</td><td><input type="num" name="Coursefees" size="15"></td></tr>
+
+
+</table> <br/>
+<input type="submit" value="Register"></fieldset> 
+</form> 
+</body>
+</html>
